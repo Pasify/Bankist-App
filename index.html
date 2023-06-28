@@ -1,131 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" type="image/png" href="/icon.png" />
-
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Bankist</title>
   </head>
+
   <body>
     <!-- TOP NAVIGATION -->
-    <nav>
-      <p class="welcome">Log in to get started</p>
-      <img src="logo.png" alt="Logo" class="logo" />
-      <form class="login">
-        <input
-          type="text"
-          placeholder="user"
-          class="login__input login__input--user"
-        />
-        <!-- In practice, use type="password" -->
-        <input
-          type="text"
-          placeholder="PIN"
-          maxlength="4"
-          class="login__input login__input--pin"
-        />
-        <button class="login__btn">&rarr;</button>
-      </form>
-    </nav>
-
-    <main class="app">
-      <!-- BALANCE -->
-      <div class="balance">
-        <div>
-          <p class="balance__label">Current balance</p>
-          <p class="balance__date">
-            As of <span class="date">05/03/2037</span>
-          </p>
-        </div>
-        <p class="balance__value">0000€</p>
-      </div>
-
-      <!-- MOVEMENTS -->
-      <div class="movements">
-        <div class="movements__row">
-          <div class="movements__type movements__type--deposit">2 deposit</div>
-          <div class="movements__date">3 days ago</div>
-          <div class="movements__value">4 000€</div>
-        </div>
-        <div class="movements__row">
-          <div class="movements__type movements__type--withdrawal">
-            1 withdrawal
-          </div>
-          <div class="movements__date">24/01/2037</div>
-          <div class="movements__value">-378€</div>
-        </div>
-      </div>
-
-      <!-- SUMMARY -->
-      <div class="summary">
-        <p class="summary__label">In</p>
-        <p class="summary__value summary__value--in">0000€</p>
-        <p class="summary__label">Out</p>
-        <p class="summary__value summary__value--out">0000€</p>
-        <p class="summary__label">Interest</p>
-        <p class="summary__value summary__value--interest">0000€</p>
-        <button class="btn--sort">&downarrow; SORT</button>
-      </div>
-
-      <!-- OPERATION: TRANSFERS -->
-      <div class="operation operation--transfer">
-        <h2>Transfer money</h2>
-        <form class="form form--transfer">
-          <input type="text" class="form__input form__input--to" />
-          <input type="number" class="form__input form__input--amount" />
-          <button class="form__btn form__btn--transfer">&rarr;</button>
-          <label class="form__label">Transfer to</label>
-          <label class="form__label">Amount</label>
-        </form>
-      </div>
-
-      <!-- OPERATION: LOAN -->
-      <div class="operation operation--loan">
-        <h2>Request loan</h2>
-        <form class="form form--loan">
-          <input type="number" class="form__input form__input--loan-amount" />
-          <button class="form__btn form__btn--loan">&rarr;</button>
-          <label class="form__label form__label--loan">Amount</label>
-        </form>
-      </div>
-
-      <!-- OPERATION: CLOSE -->
-      <div class="operation operation--close">
-        <h2>Close account</h2>
-        <form class="form form--close">
-          <input type="text" class="form__input form__input--user" />
-          <input
-            type="password"
-            maxlength="6"
-            class="form__input form__input--pin"
-          />
-          <button class="form__btn form__btn--close">&rarr;</button>
-          <label class="form__label">Confirm user</label>
-          <label class="form__label">Confirm PIN</label>
-        </form>
-      </div>
-
-      <!-- LOGOUT TIMER -->
-      <p class="logout-timer">
-        You will be logged out in <span class="timer">05:00</span>
-      </p>
-    </main>
-    <div>
-      <p class="ttimer">you have <span style="font-size: large;" class="maintimer">2:00</span> before you are logged out</p>
+    <div class="naviagtion">
+      <input type="checkbox" class="navigation__checkbox" name="" id="navigation__checkbox" class="checkbox">
+      <label class="navigation__button" for="navigation__checkbox"></label>
+      <div class="navigation__background">&nbsp</div>
     </div>
-
+    <!-- LOGIN  -->
+    <div class="container">
+      <div class="form-box">
+        <img src="logo.png" alt="Logo" class="logo" />
+        <h1 class="title">Bankist App Login</h1>
+        <p class="welcome">Log in to get started</p>
+        <form action="" class="login">
+          <div class="input-group">
+            <div class="input-field nameField">
+              <input type="text" placeholder="user" class="login__input login__input--user" />
+            </div>
+            <div class="input-field">
+              <input type="text" placeholder="pin" maxlength="4" class="login__input login__input--pin">
+            </div>
+          </div>
+          <div class="btn-field">
+            <button type="button" class="login__btn">Login &rarr;</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <main class="app">
+      <!-- <div class="nav__container">
+        <ul class="nav">
+          <li class="nav__item">
+            <svg class="icon">
+              <use xlink:href="css/sprite.svg#icon-home"></use>
+            </svg>
+          </li>
+          <li class="nav__item">
+            <svg class="icon">
+              <use xlink:href="css/sprite.svg#icon-paper-plane"></use>
+            </svg>
+          </li>
+          <li class="nav__item">
+            <svg class="icon">
+              <use xlink:href="css/sprite.svg#icon-banknote"></use>
+            </svg>
+          </li>
+          <li class="nav__item">
+            <svg class="icon">
+              <use xlink:href="css/sprite.svg#icon-trash"></use>
+            </svg>
+          </li>
+        </ul>
+      </div> -->
+      <div class="transaction">
+        <!-- BALANCE -->
+        <div class="balance">
+          <div>
+            <h3 class="user">
+              <!-- Hello, <span ></span> <br> -->
+              <!-- <span class="user__question">how are you today?</span> -->
+            </h3>
+            <div class="balance__main--container">
+              <p class="balance__label">Wallet balance</p>
+              <p class="balance__value">0000€</p>
+              <p class="balance__date"> As of <span class="date">05/03/2037</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- MOVEMENTS -->
+        <div class="movements">
+          <p class="sub_details">Details of recent Trasactions</p>
+          <div class="movements__row">
+            <div class="movements__type movements__type--deposit">2 deposit</div>
+            <div class="movements__date">3 days ago</div>
+            <div class="movements__value">4 000€</div>
+          </div>
+          <div class="movements__row">
+            <div class="movements__type movements__type--withdrawal"> 1 withdrawal </div>
+            <div class="movements__date">24/01/2037</div>
+            <div class="movements__value">-378€</div>
+          </div>
+          <div class="movements__row">
+            <div class="movements__type movements__type--withdrawal"> 1 withdrawal </div>
+            <div class="movements__date">24/01/2037</div>
+            <div class="movements__value">-378€</div>
+          </div>
+          <div class="movements__row">
+            <div class="movements__type movements__type--withdrawal"> 1 withdrawal </div>
+            <div class="movements__date">24/01/2037</div>
+            <div class="movements__value">-378€</div>
+          </div>
+          <div class="movements__row">
+            <div class="movements__type movements__type--withdrawal"> 1 withdrawal </div>
+            <div class="movements__date">24/01/2037</div>
+            <div class="movements__value">-378€</div>
+          </div>
+          <div class="movements__row">
+            <div class="movements__type movements__type--withdrawal"> 1 withdrawal </div>
+            <div class="movements__date">24/01/2037</div>
+            <div class="movements__value">-378€</div>
+          </div>
+        </div>
+        <!-- SUMMARY -->
+        <div class="summary">
+          <div>
+          </div>
+          <div>
+            <p class="summary__label">In</p>
+            <p class="summary__value summary__value--in">0000€</p>
+          </div>
+          <div>
+            <p class="summary__label">Out</p>
+            <p class="summary__value summary__value--out">0000€</p>
+          </div>
+          <div>
+            <p class="summary__label">Interest</p>
+            <p class="summary__value summary__value--interest">0000€</p>
+          </div>
+          <div>
+            <button class="btn--sort">&downarrow; SORT</button>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <!-- OPERATION: TRANSFERS -->
+        <div class="operation operation--transfer">
+          <h2>Transfer Money</h2>
+          <form class="form form--transfer">
+            <div>
+              <label class="form__label">Transfer to</label>
+              <input type="text" class="form__input form__input--to" placeholder="Enter Initials e.g  `jd`" />
+            </div>
+            <div>
+              <label class="form__label">Amount</label>
+              <input type="number" class="form__input form__input--amount" placeholder="Enter Amount" />
+            </div>
+            <button class="form__btn form__btn--transfer">Transfer Money</button>
+          </form>
+        </div>
+        <!-- OPERATION: LOAN -->
+        <div class="operation operation--loan">
+          <h2>Request Loan</h2>
+          <form class="form form--loan">
+            <div>
+              <label class="form__label form__label--loan">Amount</label>
+              <input type="number" class="form__input form__input--loan-amount" placeholder="Enter loan Amount" />
+            </div>
+            <button class="form__btn form__btn--loan">Request Loan</button>
+          </form>
+        </div>
+        <!-- OPERATION: CLOSE -->
+        <div class="operation operation--close">
+          <h2>Close Account</h2>
+          <form class="form form--close">
+            <div>
+              <label class="form__label">Confirm user</label>
+              <input type="text" class="form__input form__input--user" />
+            </div>
+            <div>
+              <label class="form__label">Confirm PIN</label>
+              <input type="password" maxlength="6" class="form__input form__input--pin" />
+            </div>
+            <button class="form__btn form__btn--close">Close Account</button>
+          </form>
+        </div>
+        <div class="logout__container">
+          <p class="logout-timer">
+            <span>Perfom a Trasactions or</span> <br />you will be logged out in <span class="timer">05:00</span>
+          </p>
+          <button class="logout__btn form__btn">log out</button>
+        </div>
+        <!-- LOGOUT TIMER -->
+        </p>
+      </div>
+    </main>
     <!-- <footer>
-      &copy; by Jonas Schmedtmann. Don't claim as your own :)
+      &copy; by paskkal.io Don't claim as your own :)
     </footer> -->
-
-    <script src="script.js"></script>
+    <script type="module" src="js/script.js"></script>
   </body>
+
 </html>

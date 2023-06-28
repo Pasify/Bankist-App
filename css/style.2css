@@ -239,7 +239,7 @@ h2 {
   gap: 0.4rem 1rem;
 }
 
-/* Exceptions for interst */
+/* Exceptions for interest */
 .form.form--loan {
   grid-template-columns: 2.5fr 1fr 2.5fr;
 }

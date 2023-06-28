@@ -1,0 +1,508 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+@media only screen and (max-width: 22.5em) {
+  html {
+    font-size: 37.5;
+  }
+}
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #444;
+  background-color: #f3f3f3;
+  height: 100vh;
+  position: relative;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin: 0;
+  position: absolute;
+  z-index: 500;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: white;
+}
+@media only screen and (max-width: 31.25em) {
+  .container {
+    outline: none;
+    position: fixed;
+  }
+}
+.container .form-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 45rem;
+  padding: 5rem;
+  background-color: rgba(245, 245, 245, 0.78);
+  text-align: center;
+  border-radius: 1rem;
+  box-shadow: 2px 2px 7px 0px rgb(197, 196, 196);
+}
+.container .form-box .logo {
+  height: 5rem;
+  width: 5rem;
+}
+.container .form-box h1 {
+  font-size: 2rem;
+  margin-bottom: 6rem;
+  color: rgba(1, 1, 30, 0.848);
+  position: relative;
+}
+.container .form-box h1::after {
+  content: "";
+  width: 30px;
+  height: 4px;
+  background: currentColor;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translate(-50%);
+}
+.container .form-box .welcome {
+  font-weight: bold;
+}
+.container .form-box .login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container .form-box .input-field {
+  background: rgba(226, 226, 226, 0.78);
+  margin: 15px 0;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  max-height: 65px;
+  transition: max-height 0.5s;
+  overflow: hidden;
+}
+.container .form-box .input-field input {
+  background: transparent;
+  border: 0;
+  outline: 0;
+  padding: 15px 20px;
+}
+.container .form-box .input-field input::placeholder {
+  color: rgba(41, 41, 46, 0.848);
+}
+.container .form-box p {
+  text-align: left;
+  font-size: 12px;
+}
+.container .form-box p a {
+  text-decoration: none;
+  color: currentColor;
+}
+.container .btn-field {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 20px;
+}
+.container .btn-field button {
+  flex-basis: 48%;
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+  height: 40px;
+  border: 0;
+  outline: none;
+  border-radius: 20px;
+  color: rgba(245, 245, 245, 0.78);
+  cursor: pointer;
+}
+
+.navigation__checkbox {
+  display: none;
+}
+.navigation__background {
+  height: 4rem;
+  width: 4rem;
+  background-color: white;
+  border-radius: 50%;
+  position: fixed;
+  top: 2rem;
+  right: 1rem;
+  z-index: 100;
+  display: none;
+}
+@media only screen and (max-width: 31.25em) {
+  .navigation__background {
+    display: block;
+  }
+}
+.navigation__button {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  position: fixed;
+  top: 2.5rem;
+  right: 1.5rem;
+  z-index: 200;
+  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+  display: none;
+}
+@media only screen and (max-width: 31.25em) {
+  .navigation__button {
+    display: block;
+  }
+}
+.navigation__checkbox:checked ~ .navigation__background {
+  width: 70%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.app {
+  max-width: 100rem;
+  max-height: 100vh;
+  justify-self: center;
+  padding: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  gap: 2rem;
+  display: none;
+  /* NOTE This creates the fade in/out anumation */
+  opacity: 1;
+  transition: all 1s;
+  /* OPERATIONS */
+}
+@media only screen and (max-width: 31.25em) {
+  .app {
+    margin: 0;
+    max-width: 90vw;
+    padding: 1rem;
+  }
+}
+@media only screen and (max-width: 22.5em) {
+  .app {
+    margin: 0;
+    padding: 1rem;
+  }
+}
+.app .transaction {
+  padding: 1rem;
+  grid-row: 1/-1;
+  height: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  /* SUMMARY */
+}
+@media only screen and (max-width: 31.25em) {
+  .app .transaction {
+    padding: 0rem;
+    width: 100%;
+    place-items: center;
+  }
+}
+@media only screen and (max-width: 22.5em) {
+  .app .transaction {
+    display: grid;
+  }
+}
+.app .transaction .balance__main--container {
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+  color: #333;
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0;
+  border-radius: 1rem;
+}
+.app .transaction .balance {
+  grid-row: 1/2;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+@media only screen and (max-width: 31.25em) {
+  .app .transaction .balance {
+    width: 90%;
+  }
+}
+.app .transaction .balance .user {
+  font-size: 2rem;
+}
+.app .transaction .balance .user .user__question {
+  font-size: 1.5rem;
+}
+.app .transaction .balance__label {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: -0.2rem;
+  color: white;
+}
+.app .transaction .balance__date {
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+.app .transaction .balance__value {
+  font-size: 4.5rem;
+  font-weight: 400;
+  color: white;
+}
+.app .transaction .movements {
+  grid-row: 2/span 2;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+@media only screen and (max-width: 31.25em) {
+  .app .transaction .movements {
+    grid-row: 3/-1;
+    height: 100vh;
+    width: 90vw;
+    padding: 1rem;
+  }
+}
+.app .transaction .movements .sub_details {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.app .transaction .movements .movements__row {
+  padding: 2.25rem 4rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 2px 2px 2px 2px rgb(214, 211, 211);
+}
+.app .transaction .movements .movements__row .movements__type {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 10rem;
+  margin-right: 2rem;
+}
+.app .transaction .movements .movements__row .movements__date {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #666;
+}
+.app .transaction .movements .movements__row .movements__type--deposit {
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+.app .transaction .movements .movements__row .movements__type--withdrawal {
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+.app .transaction .movements .movements__row .movements__value {
+  font-size: 1.7rem;
+  margin-left: auto;
+}
+.app .transaction .summary {
+  grid-row: 4/-1;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  margin-top: 1rem;
+  box-shadow: 2px 2px 2px 2px rgb(214, 211, 211);
+}
+@media only screen and (max-width: 31.25em) {
+  .app .transaction .summary {
+    grid-row: 2/3;
+    width: 90vw;
+    margin-bottom: 1rem;
+  }
+}
+.app .transaction .summary .summary__label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 0.8rem;
+}
+.app .transaction .summary .summary__value {
+  font-size: 1.7rem;
+}
+.app .transaction .summary .summary__value--in,
+.app .transaction .summary .summary__value--interest {
+  color: #66c873;
+}
+.app .transaction .summary .summary__value--out {
+  color: #f5465d;
+}
+.app .transaction .summary .btn--sort {
+  margin-left: auto;
+  border: none;
+  background: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+.app .actions {
+  grid-row: 1/-1;
+  padding: 1rem;
+  gap: 0.5rem;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+}
+@media only screen and (max-width: 31.25em) {
+  .app .actions {
+    display: none;
+  }
+}
+.app .actions .operation--transfer {
+  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+}
+.app .actions .operation--loan {
+  background-image: linear-gradient(to top left, #39b385, #9be15d);
+}
+.app .actions .operation--close {
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+}
+.app .actions .operation--close h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #333;
+}
+.app .operation {
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: #333;
+}
+.app .logout-timer {
+  padding: 0 0.3rem;
+  font-size: 1.25rem;
+}
+
+.nav__container {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 100vw;
+}
+.nav__container .nav {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.nav__container .nav .icon {
+  width: 3rem;
+  height: 3rem;
+  fill: rgba(1, 1, 30, 0.848);
+}
+@media only screen and (max-width: 31.25em) {
+  .nav__container {
+    display: flex;
+    z-index: 1;
+  }
+}
+
+.logout__container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.logout__btn {
+  background-image: linear-gradient(to top left, #e52a5a, #ff585f);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  padding: 0.5rem 1rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+  opacity: 0;
+  transition: all 3s;
+}
+
+.timer {
+  font-weight: 600;
+}
+
+/* Exceptions for interest */
+.form__label--loan {
+  grid-row: 2;
+}
+
+/* End exceptions */
+.form {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  gap: 1rem;
+}
+.form div {
+  display: flex;
+  gap: 3rem;
+  height: 4rem;
+}
+.form__input {
+  width: 100%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.4);
+  font-family: inherit;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #333;
+  padding: 0.3rem 1rem;
+  border-radius: 0.7rem;
+  transition: all 0.3s;
+}
+.form__input__input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.form .form__btn {
+  justify-self: center;
+  border: none;
+  border-radius: 0.7rem;
+  font-size: 1.5rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 1rem 3rem;
+}
+.form .form__btn__btn:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.form__label {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.display {
+  display: grid;
+  width: 70%;
+  position: fixed;
+  right: 1rem;
+  top: 6rem;
+  z-index: 500;
+}
+
+/*# sourceMappingURL=style.css.map */

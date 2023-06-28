@@ -1,0 +1,13 @@
+{
+  "name": "bankist-application",
+  "version": "1.0.0",
+  "description": "bankist application",
+  "main": "script.js",
+  "scripts": {
+    "watchSass":"sass sass/main.scss css/style.css -w",
+    "server":"live-server",
+    "runner":"npm-run-all -p watchSass server "
+  },
+  "author": "paskkal.io",
+  "license": "ISC"
+}

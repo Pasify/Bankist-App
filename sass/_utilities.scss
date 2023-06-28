@@ -1,0 +1,62 @@
+.form {
+  display: grid;
+
+  // grid-template-columns: 2.5fr 2.5fr 1fr;
+  grid-template-columns: auto;
+  // grid-template-rows: repeat(2, 2fr) 1fr;
+  grid-template-rows: auto;
+  gap: 1rem;
+  & div {
+    display: flex;
+    gap: 3rem;
+    height: 4rem;
+  }
+  &__input {
+    width: 100%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.4);
+    font-family: inherit;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #333;
+    padding: 0.3rem 1rem;
+    border-radius: 0.7rem;
+    transition: all 0.3s;
+    &__input:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  .form__btn {
+    justify-self: center;
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 1.5rem;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 1rem 3rem;
+
+    &__btn:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+  }
+
+  &__label {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+}
+
+.display {
+  display: grid;
+  width: 70%;
+  // height: 100%;
+  // outline: 2px solid pink;
+  position: fixed;
+  right: 1rem;
+  top: 6rem;
+  z-index: 500;
+}

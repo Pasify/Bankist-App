@@ -1,0 +1,17 @@
+.hide {
+  display: none;
+  opacity: 0;
+  transition: all 3s;
+}
+
+.timer {
+  font-weight: 600;
+}
+/* Exceptions for interest */
+// .form.form--loan {
+//   grid-template-columns: 2.5fr 1fr 2.5fr;
+// }
+.form__label--loan {
+  grid-row: 2;
+}
+/* End exceptions */

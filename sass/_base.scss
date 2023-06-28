@@ -1,0 +1,46 @@
+$bp-largest: 75em; //1200px : 1200px /16px
+$bp-large: 68.75em; //1100px
+$bp-medium: 56.25em; //900px
+$bp-small: 37.5em; //600px
+$bp-smallest: 31.25em; //500px
+$bp-android: 22.5em; //360px
+
+// colors
+$color1: rgba(1, 1, 30, 0.848);
+
+// text color
+$text-color: #333;
+
+// box-shadow
+$shadow: 2px 2px 2px 2px rgb(214, 211, 211);
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-android) {
+    font-size: 37.5; //6rem
+  }
+  @media only screen and (max-width: $bp-largest) {
+    font-size: 50%;
+  }
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #444;
+  background-color: #f3f3f3;
+  height: 100vh;
+  //   padding: 2rem;
+  position: relative;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+// media query
+//////////////////media queries manager
